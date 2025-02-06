@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merchant UPI Payment</title>
+</head>
+<body>
+    <h2>Enter Amount to Pay</h2>
+    <input type="number" id="amount" placeholder="Enter Amount">
+    <button onclick="generateUPILink()">Pay Now</button>
+
+    <script>
+        function generateUPILink() {
+            let amount = document.getElementById("amount").value;
+            let upiID = "merchant@upi";
+            let upiLink = `upi://pay?pa=${upiID}&am=${amount}&cu=INR`;
+            window.location.href = upiLink;
+        }
+    </script>
+</body>
+</html>
